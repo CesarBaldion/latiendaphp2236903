@@ -7,22 +7,34 @@
 <div class="row">
     <form method="POST" action="{{route('productos.store')}}" class="col s12">
       @csrf
+      @if(session('mensaje'))
+      <div class="row">
+        <div class="col s8">
+          <span class="green accent-3">
+            {{ session('mensaje')}}
+          </span>
+        </div>
+      </div>
+      @endif
       <div class="row">
         <div class="input-field col s8">
           <input placeholder="Nombre de Producto" id="nombre" type="text" class="validate" name="nombre">
           <label for="nombre">Nombre de Producto</label>
+          <span>{{ $errors->first('nombre')}}</span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s8">
         <textarea id="desc" name="desc" class="materialize-textarea"></textarea>
           <label for="desc">Descripción</label>
+          <span>{{ $errors->first('desc')}}</span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s8">
           <input id="precio" type="text" class="validate" name="precio">
           <label for="precio">Precio</label>
+          <span>{{ $errors->first('precio')}}</span>
         </div>
       </div>
       <div class="row">
@@ -47,6 +59,7 @@
       @endforeach
     </select>
     <label>Categorías Disponibles</label>
+    <span>{{ $errors->first('categoria')}}</span>
         </div>
       </div>
 
@@ -61,6 +74,7 @@
       @endforeach
     </select>
     <label>Marcas Disponibles</label>
+    <span>{{ $errors->first('marca')}}</span>
         </div>
       </div>
       <div class="row">
