@@ -9,7 +9,7 @@
     <title></title>
 </head>
 <body>
-<nav class="grey darken-4">
+<nav class="blue darken-1">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -23,7 +23,13 @@
     @yield('contenido')
   </div>
   <script src="{{ asset('materialize/js/materialize.js')}}" ></script>
-  <script>document.addEventListener('DOMContentLoaded', function() {
+  <script>
+  M.AutoInit();
+  document.addEventListener('DOMContentLoaded', function() {
+    //codigo inicialización tabs
+    let tabs = document.querySelector(".tabs");
+    var instance = M.Tabs.init(tabs);
+    //codigo inicialización select
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, []);
   });

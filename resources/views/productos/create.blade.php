@@ -39,7 +39,7 @@
       </div>
       <div class="row">
         <div class="file-field input-field col s8">
-        <div class="btn">
+        <div class="btn light-blue lighten-3">
         <span>Imagen de Producto</span>
         <input type="file" name="imagen">
       </div>
@@ -75,11 +75,11 @@
       @endforeach
     </select>
     <label>Marcas Disponibles</label>
-    <span>{{ $errors->f irst('marca')}}</span>
+    <span>{{ $errors->first('marca')}}</span>
         </div>
       </div>
       <div class="row">
-        <button class="btn waves-effect waves-light" type="submit">Guardar
+        <button class="btn waves-effect waves-light light-blue lighten-3" type="submit">Guardar
         </button>
       </div>
     </form>
