@@ -4,7 +4,13 @@
 <div class="row card-panel light-blue accent-1 center">
     <h1>Catálogo de producto</h1>
 </div>
-
+@if(session('mensaje'))
+<div class="row">
+  <p>{{ session('mensaje') }} 
+    <a href="{{ route('cart.index') }}">Ir al carrito</a>
+  </p>
+</div>
+@endif
     @foreach($productos as $producto)
   <div class="row">
   <div class="card">
@@ -16,6 +22,7 @@
         <li class="tab light-blue accent-1"><a  href="#{{ $producto->id }}">Nombre</a></li>
         <li class="tab light-blue accent-1"><a class="active" href="#{{ $producto->id }}1">Descripción</a></li>
         <li class="tab light-blue accent-1"><a href="#{{ $producto->id }}2">Precio</a></li>
+        <a href="{{ route('productos.show' , $producto->id ) }}">Detalles</a>
       </ul>
     </div>
     <div class="card-content light-blue accent-2">
